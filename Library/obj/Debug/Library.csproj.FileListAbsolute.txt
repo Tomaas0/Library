@@ -12,3 +12,16 @@ C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Knygos.mdf
 C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Knygos_log.ldf
 C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.SkaitytojoLangas.resources
 C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.DarbuotojoLangas.resources
+U:\Visual Studio 2012\Projects\Library\Library\bin\Debug\Library.exe.config
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.exe
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.pdb
+U:\Visual Studio 2012\Projects\Library\Library\bin\Debug\Knygos.mdf
+U:\Visual Studio 2012\Projects\Library\Library\bin\Debug\Knygos_log.ldf
+U:\Visual Studio 2012\Projects\Library\Library\bin\Debug\Library.exe
+U:\Visual Studio 2012\Projects\Library\Library\bin\Debug\Library.pdb
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.DarbuotojoLangas.resources
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.Form1.resources
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.Properties.Resources.resources
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.SkaitytojoLangas.resources
+U:\Visual Studio 2012\Projects\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
