@@ -1,0 +1,14 @@
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.Form1.resources
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Library.exe.config
+C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Library.exe
+C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Library.pdb
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.exe
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.pdb
+C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Knygos.mdf
+C:\Users\Tomas\Desktop\Library\Library\Library\bin\Debug\Knygos_log.ldf
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.SkaitytojoLangas.resources
+C:\Users\Tomas\Desktop\Library\Library\Library\obj\Debug\Library.DarbuotojoLangas.resources
