@@ -72,7 +72,24 @@ SELECT Id, Autorius, Pavadinimas, Zmogus, [Grazinimo Laikas] FROM [Table] WHERE 
               <Mapping SourceColumn="Zmogus" DataSetColumn="Zmogus" />
               <Mapping SourceColumn="Grazinimo Laikas" DataSetColumn="Grazinimo Laikas" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="KnygosConnectionString (Settings)" DbObjectName="dbo.[Table]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Autorius, Pavadinimas, Zmogus, [Grazinimo Laikas] FROM dbo.[Table] WHERE Zmogus &gt; 0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="KnygosConnectionString (Settings)" DbObjectName="dbo.[Table]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByZmogus" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByZmogus" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByZmogus">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Autorius, Pavadinimas, Zmogus, [Grazinimo Laikas] FROM dbo.[Table] WHERE Zmogus !&gt; 0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -82,7 +99,7 @@ SELECT Id, Autorius, Pavadinimas, Zmogus, [Grazinimo Laikas] FROM [Table] WHERE 
   <xs:element name="KnygosDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="KnygosDataSet1" msprop:Generator_UserDSName="KnygosDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Table" msprop:Generator_TableClassName="TableDataTable" msprop:Generator_TableVarName="tableTable" msprop:Generator_TablePropName="Table" msprop:Generator_RowDeletingName="TableRowDeleting" msprop:Generator_RowChangingName="TableRowChanging" msprop:Generator_RowEvHandlerName="TableRowChangeEventHandler" msprop:Generator_RowDeletedName="TableRowDeleted" msprop:Generator_UserTableName="Table" msprop:Generator_RowChangedName="TableRowChanged" msprop:Generator_RowEvArgName="TableRowChangeEvent" msprop:Generator_RowClassName="TableRow">
+        <xs:element name="Table" msprop:Generator_TableClassName="TableDataTable" msprop:Generator_TableVarName="tableTable" msprop:Generator_RowChangedName="TableRowChanged" msprop:Generator_TablePropName="Table" msprop:Generator_RowDeletingName="TableRowDeleting" msprop:Generator_RowChangingName="TableRowChanging" msprop:Generator_RowEvHandlerName="TableRowChangeEventHandler" msprop:Generator_RowDeletedName="TableRowDeleted" msprop:Generator_RowClassName="TableRow" msprop:Generator_UserTableName="Table" msprop:Generator_RowEvArgName="TableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />

@@ -19,12 +19,31 @@ namespace Library
 
         private void SkaitytojoLangas_Load(object sender, EventArgs e)
         {
-            this.tableTableAdapter.Fill(this.knygosDataSet1.Table);
+            this.tableTableAdapter.FillByZmogus(this.knygosDataSet1.Table);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(int.Parse(textBox1.Text));
+            DateTime Data = DateTime.Today;
+            Data = Data.AddMonths(1);
+
+            knygosDataSet1.Table[dataGridView1.CurrentCell.RowIndex].Zmogus = ID;
+            knygosDataSet1.Table[dataGridView1.CurrentCell.RowIndex][4] = Data;
+
+            this.tableTableAdapter.Update(knygosDataSet1);
+            this.tableTableAdapter.FillByZmogus(this.knygosDataSet1.Table);
+            //this.Validate();
+            //this.tableBindingSource.EndEdit();
+            //this.tableAdapterManager.UpdateAll(this.knygosDataSet1);
+        }
+
+
+
     }
 }

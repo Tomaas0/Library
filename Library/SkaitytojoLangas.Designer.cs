@@ -41,6 +41,8 @@
             this.knygosDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,7 +85,7 @@
             this.dataGridView1.DataSource = this.tableBindingSource3;
             this.dataGridView1.Location = new System.Drawing.Point(49, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 256);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 330);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -125,11 +127,31 @@
             this.tableBindingSource2.DataMember = "Table";
             this.tableBindingSource2.DataSource = this.knygosDataSet1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(434, 259);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Rezervuoti";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(434, 200);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "ID";
+            // 
             // SkaitytojoLangas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 509);
+            this.ClientSize = new System.Drawing.Size(566, 407);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SkaitytojoLangas";
             this.Text = "Form2";
@@ -142,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,6 +179,8 @@
         private System.Windows.Forms.BindingSource tableBindingSource1;
         private System.Windows.Forms.BindingSource tableBindingSource2;
         private System.Windows.Forms.BindingSource tableBindingSource3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn autoriusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pavadinimasDataGridViewTextBoxColumn;
