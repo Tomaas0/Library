@@ -12,6 +12,8 @@ namespace Library
 {
     public partial class SkaitytojoLangas : Form
     {
+        private DBManager dbman = new DBManager();
+
         public SkaitytojoLangas()
         {
             InitializeComponent();
@@ -30,20 +32,15 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(int.Parse(textBox1.Text));
-            DateTime Data = DateTime.Today;
-            Data = Data.AddMonths(1);
-
-            knygosDataSet1.Table[dataGridView1.CurrentCell.RowIndex].Zmogus = ID;
-            knygosDataSet1.Table[dataGridView1.CurrentCell.RowIndex][4] = Data;
-
-            this.tableTableAdapter.Update(knygosDataSet1);
-            this.tableTableAdapter.FillByZmogus(this.knygosDataSet1.Table);
-            //this.Validate();
-            //this.tableBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.knygosDataSet1);
+            dbman.take(knygosDataSet1, dataGridView1.CurrentCell.RowIndex, ID);
+            updateTable();
         }
 
-
+        private void updateTable()
+        {
+            this.tableTableAdapter.Update(knygosDataSet1);
+            this.tableTableAdapter.FillByZmogus(this.knygosDataSet1.Table);
+        }
 
     }
 }

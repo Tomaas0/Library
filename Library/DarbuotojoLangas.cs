@@ -12,7 +12,7 @@ namespace Library
 {
     public partial class DarbuotojoLangas : Form
     {
-        private double bauda = 0.1;
+        private DBManager dbman = new DBManager();
 
         public DarbuotojoLangas()
         {
@@ -46,86 +46,41 @@ namespace Library
             else
             {
                 DateTime grazinimoData = (DateTime)knygosDataSet1.Table[tableDataGridView.CurrentCell.RowIndex][4];
-                label1.Text = "Mokama suma: " + baudosDydis(grazinimoData).ToString() + " €";
+                label1.Text = "Mokama suma: " + dbman.baudosDydis(grazinimoData).ToString() + " €";
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                knygosDataSet1.Table[tableDataGridView.CurrentCell.RowIndex].Zmogus = 0;
-                knygosDataSet1.Table[tableDataGridView.CurrentCell.RowIndex][4] = DBNull.Value;
-                this.tableTableAdapter.Update(knygosDataSet1);
-                this.tableTableAdapter.Fill(this.knygosDataSet1.Table);
-                //this.Validate();
-                //this.tableBindingSource.EndEdit();
-                //this.tableAdapterManager.UpdateAll(this.knygosDataSet1);
-            }
-            catch (Exception ex)
-            {
-                label1.Text = ex.ToString();
-            }
+
+            dbman.remove(knygosDataSet1, tableDataGridView.CurrentCell.RowIndex);
+            updateTable();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DateTime grazinimoData = (DateTime)knygosDataSet1.Table[tableDataGridView.CurrentCell.RowIndex][4];
-            if(baudosDydis(grazinimoData) > 0)
+            try
             {
-                label1.Text = "Negalima pratesti grazinimo datos. Bauda jau pradeta skaiciuoti.";
-            }
-            else
+                dbman.extend(knygosDataSet1, tableDataGridView.CurrentCell.RowIndex);
+            }catch(Exception exc)
             {
-            grazinimoData = grazinimoData.AddMonths(1);
-            knygosDataSet1.Table[tableDataGridView.CurrentCell.RowIndex][4] = grazinimoData;
-            this.tableTableAdapter.Update(knygosDataSet1);
-            this.tableTableAdapter.Fill(this.knygosDataSet1.Table);
+                label1.Text = exc.Message;
             }
-
+             updateTable();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int id = generateId();
             String autorius = textBoxAutorius.Text;
             String pavadinimas = textBoxPavadinimas.Text;
+            dbman.add(knygosDataSet1, autorius, pavadinimas);
+            updateTable();
+        }
 
-            DataRow anyRow = knygosDataSet1.Table.NewRow();
-            anyRow[0] = id;
-            anyRow[1] = autorius;
-            anyRow[2] = pavadinimas;
-            anyRow[3] = 0;
-            knygosDataSet1.Table.Rows.Add(anyRow);
+        private void updateTable()
+        {
             this.tableTableAdapter.Update(knygosDataSet1);
             this.tableTableAdapter.Fill(this.knygosDataSet1.Table);
-        }
-
-        private double baudosDydis(DateTime data)
-        {
-            DateTime today = DateTime.Today;
-            double suma;
-            suma = (today - data).Days * this.bauda;
-            if (suma > 0) return suma;
-            else return 0;
-        }
-
-        private int generateId()
-        {
-            int i;
-            int id = 1000;
-            for(i = 0; i < knygosDataSet1.Table.Count; i++)
-            {
-                if((int)knygosDataSet1.Table[i][0] == id)
-                {
-                    id++;
-                }
-                else
-                {
-                    return id;
-                }
-            }
-            return id;
         }
     }
 }
