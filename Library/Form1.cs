@@ -74,6 +74,8 @@ namespace Library
         private void button3_Click_1(object sender, EventArgs e)
         {
             Login login = new Login();
+
+            //kad lentelej atskirtum kur darbuotojas kur skaitytojas, tai darbuotojas = 0, skaitytojas = 1
             if (checkBox2.Checked)
             {
                 Vartotojas = 1;
