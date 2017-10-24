@@ -39,3 +39,7 @@ C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\obj\Debug\Librar
 C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\obj\Debug\Library.exe
 C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\obj\Debug\Library.pdb
+C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.dll
+C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.xml
+C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.SqlServer.xml

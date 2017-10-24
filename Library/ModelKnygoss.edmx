@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KnygosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Autorius" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pavadinimas" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Zmogus" Type="int" />
+          <Property Name="Grazinimo Laikas" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vartotojai">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Userame" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vartotojas" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Table_ToTable">
+          <End Role="Vartotojai" Type="Self.Vartotojai" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Vartotojai">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KnygosModelStoreContainer">
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vartotojai" EntityType="Self.Vartotojai" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Table_ToTable" Association="Self.FK_Table_ToTable">
+            <End Role="Vartotojai" EntitySet="Vartotojai" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KnygosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Autorius" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pavadinimas" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Zmogus" Type="Int32" />
+          <Property Name="Grazinimo_Laikas" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Vartotojai" Relationship="Self.FK_Table_ToTable" FromRole="Table" ToRole="Vartotojai" />
+        </EntityType>
+        <EntityType Name="Vartotojai">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Vartotojas" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Table" Relationship="Self.FK_Table_ToTable" FromRole="Vartotojai" ToRole="Table" />
+        </EntityType>
+        <Association Name="FK_Table_ToTable">
+          <End Role="Vartotojai" Type="Self.Vartotojai" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Vartotojai">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KnygosEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="Vartotojais" EntityType="Self.Vartotojai" />
+          <AssociationSet Name="FK_Table_ToTable" Association="Self.FK_Table_ToTable">
+            <End Role="Vartotojai" EntitySet="Vartotojais" />
+            <End Role="Table" EntitySet="Tables" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KnygosModelStoreContainer" CdmEntityContainer="KnygosEntities2">
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="KnygosModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Autorius" ColumnName="Autorius" />
+                <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+                <ScalarProperty Name="Zmogus" ColumnName="Zmogus" />
+                <ScalarProperty Name="Grazinimo_Laikas" ColumnName="Grazinimo Laikas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vartotojais">
+            <EntityTypeMapping TypeName="KnygosModel.Vartotojai">
+              <MappingFragment StoreEntitySet="Vartotojai">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Userame" ColumnName="Userame" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Vartotojas" ColumnName="Vartotojas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
