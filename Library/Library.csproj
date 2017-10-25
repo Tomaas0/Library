@@ -47,8 +47,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,10 +86,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KnygosDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="KnygosDataSet2.Designer.cs">
+    <Compile Include="Login.cs" />
+    <Compile Include="ModelKnygoss.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KnygosDataSet2.xsd</DependentUpon>
+      <DependentUpon>ModelKnygoss.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelKnygoss.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelKnygoss.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelKnygoss.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelKnygoss.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>ModelKnygoss.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vartotojai.cs">
+      <DependentUpon>ModelKnygoss.tt</DependentUpon>
     </Compile>
     <Compile Include="SkaitytojoLangas.cs">
       <SubType>Form</SubType>
@@ -110,6 +136,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SkaitytojoLangas.resx">
       <DependentUpon>SkaitytojoLangas.cs</DependentUpon>
@@ -136,16 +163,8 @@
     <None Include="KnygosDataSet1.xss">
       <DependentUpon>KnygosDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="KnygosDataSet2.xsc">
-      <DependentUpon>KnygosDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="KnygosDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>KnygosDataSet2.Designer.cs</LastGenOutput>
+    <None Include="packages.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="KnygosDataSet2.xss">
-      <DependentUpon>KnygosDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +175,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="ModelKnygoss.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelKnygoss.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelKnygoss.edmx.diagram">
+      <DependentUpon>ModelKnygoss.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -180,6 +206,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Knygos.mdf</DependentUpon>
     </Content>
+    <Content Include="ModelKnygoss.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelKnygoss.edmx</DependentUpon>
+      <LastGenOutput>ModelKnygoss.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelKnygoss.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelKnygoss.edmx</DependentUpon>
+      <LastGenOutput>ModelKnygoss.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\knyga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
