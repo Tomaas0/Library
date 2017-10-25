@@ -91,7 +91,7 @@ namespace Library
             }
             else
             {
-                DialogResult rezult = MessageBox.Show("Tokio Vartotojo nėra, ar norite užziregistruoti?", "Caption",MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                DialogResult rezult = MessageBox.Show("Tokio Vartotojo nėra, ar norite užziregistruoti?", "Caption",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(rezult == DialogResult.Yes)
                 {
                     login.FillData(Username, Password, Vartotojas);               
