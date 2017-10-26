@@ -43,7 +43,7 @@ namespace Library
             }
         }
 
-        public int GetID(string username)
+        public static int GetID(string username)
         {
             int id;
             using (KnygosEntities2 contex = new KnygosEntities2())

@@ -45,6 +45,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBoxAutorius = new System.Windows.Forms.TextBox();
             this.textBoxPavadinimas = new System.Windows.Forms.TextBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDataGridView)).BeginInit();
@@ -171,11 +172,22 @@
             this.textBoxPavadinimas.TabIndex = 17;
             this.textBoxPavadinimas.Text = "Pavadinimas";
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(319, 12);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 18;
+            this.deleteButton.Text = "Istrinti knyga";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // DarbuotojoLangas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 615);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.textBoxPavadinimas);
             this.Controls.Add(this.textBoxAutorius);
             this.Controls.Add(this.button3);
@@ -212,5 +224,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBoxAutorius;
         private System.Windows.Forms.TextBox textBoxPavadinimas;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

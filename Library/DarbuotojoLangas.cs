@@ -79,6 +79,12 @@ namespace Library
             updateTable();
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            dbman.delete(knygosDataSet1, 0);
+            updateTable();
+        }
+
         private void updateTable()
         {
             this.tableTableAdapter.Update(knygosDataSet1);
