@@ -29,48 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.knygosDataSet1 = new Library.KnygosDataSet1();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableTableAdapter = new Library.KnygosDataSet1TableAdapters.TableTableAdapter();
-            this.tableAdapterManager = new Library.KnygosDataSet1TableAdapters.TableAdapterManager();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autoriusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pavadinimasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.knygosDataSet1 = new Library.KnygosDataSet1();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTableAdapter = new Library.KnygosDataSet1TableAdapters.TableTableAdapter();
+            this.tableAdapterManager = new Library.KnygosDataSet1TableAdapters.TableAdapterManager();
             this.knygosDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // knygosDataSet1
-            // 
-            this.knygosDataSet1.DataSetName = "KnygosDataSet1";
-            this.knygosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.knygosDataSet1;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Library.KnygosDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dataGridView1
             // 
@@ -112,20 +93,10 @@
             this.tableBindingSource3.DataMember = "Table";
             this.tableBindingSource3.DataSource = this.knygosDataSet1;
             // 
-            // knygosDataSet1BindingSource
+            // knygosDataSet1
             // 
-            this.knygosDataSet1BindingSource.DataSource = this.knygosDataSet1;
-            this.knygosDataSet1BindingSource.Position = 0;
-            // 
-            // tableBindingSource1
-            // 
-            this.tableBindingSource1.DataMember = "Table";
-            this.tableBindingSource1.DataSource = this.knygosDataSet1;
-            // 
-            // tableBindingSource2
-            // 
-            this.tableBindingSource2.DataMember = "Table";
-            this.tableBindingSource2.DataSource = this.knygosDataSet1;
+            this.knygosDataSet1.DataSetName = "KnygosDataSet1";
+            this.knygosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -145,21 +116,61 @@
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "ID";
             // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.knygosDataSet1;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Library.KnygosDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // knygosDataSet1BindingSource
+            // 
+            this.knygosDataSet1BindingSource.DataSource = this.knygosDataSet1;
+            this.knygosDataSet1BindingSource.Position = 0;
+            // 
+            // tableBindingSource1
+            // 
+            this.tableBindingSource1.DataMember = "Table";
+            this.tableBindingSource1.DataSource = this.knygosDataSet1;
+            // 
+            // tableBindingSource2
+            // 
+            this.tableBindingSource2.DataMember = "Table";
+            this.tableBindingSource2.DataSource = this.knygosDataSet1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(434, 49);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.Text = "Paieška";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // SkaitytojoLangas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 407);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SkaitytojoLangas";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.SkaitytojoLangas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.knygosDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource2)).EndInit();
@@ -184,5 +195,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn autoriusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pavadinimasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

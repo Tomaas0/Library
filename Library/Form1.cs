@@ -18,19 +18,17 @@ namespace Library
             InitializeComponent();
         }
 
-        public int Vartotojas { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        private User user = new User();
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Username = textBox1.Text;
+            user.Username = textBox1.Text;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            Password = textBox2.Text;
+            user.Password = textBox2.Text;
         }
         
 
@@ -39,23 +37,23 @@ namespace Library
             Login login = new Login();
             if (checkBox2.Checked)
             {
-                Vartotojas = 1;
+                user.Vartotojas = 1;
             }
             if (checkBox1.Checked)
             {
-                Vartotojas = 0;
+                user.Vartotojas = 0;
             }
 
-            if (login.CheckData(Username,Password,Vartotojas))
+            if (login.CheckData(user.Username, user.Password, user.Vartotojas))
             {
-                if (Vartotojas == 1)
+                if (user.Vartotojas == 1)
                 {
-                    SkaitytojoLangas Skaitytojas = new SkaitytojoLangas();
+                    SkaitytojoLangas Skaitytojas = new SkaitytojoLangas(user);
                     Skaitytojas.ShowDialog();
                 }
                 else
                 {
-                    DarbuotojoLangas Darbuotojas = new DarbuotojoLangas();
+                    DarbuotojoLangas Darbuotojas = new DarbuotojoLangas(user);
                     Darbuotojas.ShowDialog();
                 }
             }
@@ -78,14 +76,14 @@ namespace Library
             //kad lentelej atskirtum kur darbuotojas kur skaitytojas, tai darbuotojas = 0, skaitytojas = 1
             if (checkBox2.Checked)
             {
-                Vartotojas = 1;
+                user.Vartotojas = 1;
             }
             if(checkBox1.Checked)
             {
-                Vartotojas = 0;
+                user.Vartotojas = 0;
             }
 
-            if(login.CheckData(Username, Password, Vartotojas))
+            if(login.CheckData(user.Username, user.Password, user.Vartotojas))
             {
                 ShowDialogs();
             }
@@ -94,7 +92,7 @@ namespace Library
                 DialogResult rezult = MessageBox.Show("Tokio Vartotojo nėra, ar norite užziregistruoti?", "Caption",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(rezult == DialogResult.Yes)
                 {
-                    login.FillData(Username, Password, Vartotojas);               
+                    login.FillData(user.Username, user.Password, user.Vartotojas);               
                     MessageBox.Show("Sekimgai įrašyta");
                     ShowDialogs();
                 }
@@ -110,15 +108,19 @@ namespace Library
         public void ShowDialogs()
         {
 
-             if(Vartotojas == 1)
+             if(user.Vartotojas == 1)
                 {
-                SkaitytojoLangas Skaitytojas = new SkaitytojoLangas();
+                SkaitytojoLangas Skaitytojas = new SkaitytojoLangas(user);
+                this.Hide();
                 Skaitytojas.ShowDialog();
+                this.Show();
             }
                 else
                 {
-                DarbuotojoLangas Darbuotojas = new DarbuotojoLangas();
+                DarbuotojoLangas Darbuotojas = new DarbuotojoLangas(user);
+                this.Hide();
                 Darbuotojas.ShowDialog();
+                this.Show();
             }
         }
     }

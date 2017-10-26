@@ -13,10 +13,12 @@ namespace Library
     public partial class SkaitytojoLangas : Form
     {
         private DBManager dbman = new DBManager();
+        User user = new User();
 
-        public SkaitytojoLangas()
+        public SkaitytojoLangas(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void SkaitytojoLangas_Load(object sender, EventArgs e)
@@ -42,5 +44,16 @@ namespace Library
             this.tableTableAdapter.FillByZmogus(this.knygosDataSet1.Table);
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tableTableAdapter.FillByPavadinimas(this.knygosDataSet1.Table, "%" + textBox2.Text + "%");
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
