@@ -13,10 +13,12 @@ namespace Library
     public partial class DarbuotojoLangas : Form
     {
         private DBManager dbman = new DBManager();
+        User user;
 
-        public DarbuotojoLangas()
+        public DarbuotojoLangas(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void DarbuotojoLangas_Load(object sender, EventArgs e)

@@ -105,6 +105,7 @@
     <Compile Include="Table.cs">
       <DependentUpon>ModelKnygoss.tt</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="Vartotojai.cs">
       <DependentUpon>ModelKnygoss.tt</DependentUpon>
     </Compile>
