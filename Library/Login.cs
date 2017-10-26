@@ -43,6 +43,18 @@ namespace Library
             }
         }
 
+        public int GetID(string username)
+        {
+            int id;
+            using (KnygosEntities2 contex = new KnygosEntities2())
+            {
+                Vartotojai vartotojass = contex.Vartotojais.FirstOrDefault(r => r.Userame == username);
+                    id = (int)vartotojass.Id;
+            }
+            return id;
+
+        }
+
 
 
     }
