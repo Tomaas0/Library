@@ -48,11 +48,13 @@ namespace Library
             {
                 if (user.Vartotojas == 1)
                 {
+                    user.ID = Login.GetID(user.Username);
                     SkaitytojoLangas Skaitytojas = new SkaitytojoLangas(user);
                     Skaitytojas.ShowDialog();
                 }
                 else
                 {
+                    user.ID = Login.GetID(user.Username);
                     DarbuotojoLangas Darbuotojas = new DarbuotojoLangas(user);
                     Darbuotojas.ShowDialog();
                 }
@@ -110,13 +112,15 @@ namespace Library
 
              if(user.Vartotojas == 1)
                 {
+                user.ID = Login.GetID(user.Username);
                 SkaitytojoLangas Skaitytojas = new SkaitytojoLangas(user);
                 this.Hide();
                 Skaitytojas.ShowDialog();
                 this.Show();
             }
                 else
-                {
+            {
+                user.ID = Login.GetID(user.Username);
                 DarbuotojoLangas Darbuotojas = new DarbuotojoLangas(user);
                 this.Hide();
                 Darbuotojas.ShowDialog();

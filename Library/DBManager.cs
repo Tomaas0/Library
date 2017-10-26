@@ -49,6 +49,11 @@ namespace Library
             dataSet.Table.Rows.Add(anyRow);
         }
 
+        public void delete(KnygosDataSet1 dataSet, int n)
+        {
+            dataSet.Table.Rows.Remove(dataSet.Table[n]);
+        }
+
         public void take(KnygosDataSet1 dataSet, int n, int ID)
         {
             DateTime Data = DateTime.Today;

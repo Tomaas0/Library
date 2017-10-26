@@ -19,6 +19,8 @@ namespace Library
         {
             InitializeComponent();
             this.user = user;
+            label1.Text = "Prisijungta kaip: " + user.Username;
+            label2.Text = "Skaitytojo ID: " + user.ID;
         }
 
         private void SkaitytojoLangas_Load(object sender, EventArgs e)
@@ -33,8 +35,7 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(int.Parse(textBox1.Text));
-            dbman.take(knygosDataSet1, dataGridView1.CurrentCell.RowIndex, ID);
+            dbman.take(knygosDataSet1, dataGridView1.CurrentCell.RowIndex, user.ID);
             updateTable();
         }
 
