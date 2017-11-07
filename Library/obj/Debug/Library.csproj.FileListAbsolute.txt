@@ -43,3 +43,4 @@ C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\Entity
 C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.xml
 C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Emilija.DELL-EMILIJOS\Documents\Github\Library\Library\obj\Debug\Library.FormRegistration.resources

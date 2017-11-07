@@ -94,9 +94,9 @@ namespace Library
                 DialogResult rezult = MessageBox.Show("Tokio Vartotojo nėra, ar norite užziregistruoti?", "Caption",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(rezult == DialogResult.Yes)
                 {
-                    login.FillData(user.Username, user.Password, user.Vartotojas);               
-                    MessageBox.Show("Sekimgai įrašyta");
-                    ShowDialogs();
+                    FormRegistration form = new FormRegistration();
+                    form.ShowDialog();     
+                               
                 }
                else
                 {
@@ -126,6 +126,11 @@ namespace Library
                 Darbuotojas.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
