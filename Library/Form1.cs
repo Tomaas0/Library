@@ -28,6 +28,7 @@ namespace Library
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            textBox2.PasswordChar = '*';
             user.Password = textBox2.Text;
         }
         

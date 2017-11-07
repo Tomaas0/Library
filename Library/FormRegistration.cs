@@ -56,7 +56,7 @@ namespace Library
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            textBox2.PasswordChar = '*';
         }
         public void ShowDialogs()
         {
