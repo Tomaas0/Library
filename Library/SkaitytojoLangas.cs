@@ -56,5 +56,14 @@ namespace Library
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            KurjerioForma Kurjeris = new KurjerioForma();
+            Kurjeris.ShowDialog();
+            dbman.take(knygosDataSet1, dataGridView1.CurrentCell.RowIndex, user.ID);
+            updateTable();
+        }
     }
 }
