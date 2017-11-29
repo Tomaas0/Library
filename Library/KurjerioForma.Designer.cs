@@ -38,11 +38,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 79);
+            this.button1.Location = new System.Drawing.Point(44, 145);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 42);
             this.button1.TabIndex = 0;
@@ -131,11 +134,43 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Pasirinkite pristatymo datą ir laiką:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(18, 108);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Grynaisiais pinigais";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(139, 108);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(116, 17);
+            this.checkBox2.TabIndex = 11;
+            this.checkBox2.Text = "Bankiniu pavedimu";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Pasirinkite atsiskaitymo būdą:";
+            // 
             // KurjerioForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 150);
+            this.ClientSize = new System.Drawing.Size(261, 214);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -165,5 +200,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
